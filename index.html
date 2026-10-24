@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src https://*.workers.dev; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>PSDC Entry Test</title>
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+</head>
+<body>
+<header>
+  <h1 id="center">PAFWA SKILLS DEVELOPMENT CENTRE, NRK (PSDC)</h1>
+  <p>Online Entry Test</p>
+</header>
+
+<main id="login"><div class="wrap"><div class="card">
+  <h2 class="ttl">Student Login</h2>
+  <div style="text-align:center"><span class="status off" id="entryst">Checking...</span></div>
+  <label for="sn">Student Name</label>
+  <input type="text" id="sn" autocomplete="off" placeholder="Your full name">
+  <label for="fn">Father Name</label>
+  <input type="text" id="fn" autocomplete="off" placeholder="Your father's full name">
+  <label for="lcourse">Course</label>
+  <select id="lcourse"></select>
+  <label for="lqual">Qualification</label>
+  <select id="lqual"></select>
+  <label for="code">Test Code</label>
+  <input type="text" id="code" autocomplete="off" inputmode="numeric" maxlength="8" placeholder="Code written on the board">
+  <div class="err" id="lerr"></div>
+  <button class="btn big" id="lgo" style="margin-top:12px">Next</button>
+  <ul class="rules">
+    <li>Login is possible only at the test centre while entry is open.</li>
+    <li>Once the entry window closes, nobody can start the test.</li>
+    <li>Each student gets one attempt only.</li>
+  </ul>
+</div></div></main>
+
+<main id="reg" class="hidden"><div class="wrap"><div class="card" style="max-width:600px;margin:0 auto">
+  <div style="text-align:center"><span class="chip" id="rcourse"></span></div>
+  <h2 class="ttl">Instructions</h2>
+  <table class="info" style="margin-top:14px">
+    <tr><td>Name</td><td id="iname"></td></tr>
+    <tr><td>Father Name</td><td id="ifather"></td></tr>
+    <tr><td>Roll No</td><td id="iroll"></td></tr>
+    <tr><td>Qualification</td><td id="iqual"></td></tr>
+  </table>
+  <ul class="rules" id="rules"></ul>
+  <div class="err" id="serr"></div>
+  <div class="arow" style="margin-top:22px"><button class="btn ghost" id="regBack">Logout</button><button class="btn" style="flex:1;font-size:18px" id="go">Start Test</button></div>
+</div></div></main>
+
+<main id="test" class="hidden"><div class="wrap" style="display:flex;flex-direction:column;gap:14px">
+  <div class="bar">
+    <div class="who"><b id="wn"></b><span id="wf"></span><span id="wc"></span></div>
+    <div style="text-align:right"><div class="timer" id="tm">00:00</div><span style="font-size:12px;color:var(--mut)">Time remaining</span></div>
+  </div>
+  <div class="prog"><i id="pg"></i></div>
+  <div class="grid">
+    <div class="card">
+      <div class="qn" id="qn"></div><div class="qt" id="qt"></div><div id="opts"></div>
+      <div class="nav"><button class="btn ghost" id="prev">Previous</button><button class="btn red" id="end" disabled>End Paper</button><button class="btn" id="next">Next</button></div>
+      <div class="hint" id="endhint"></div>
+    </div>
+    <div class="card side"><h3>Questions</h3><div class="pal" id="pal"></div><div class="legend">Green: answered<br><span id="cnt"></span></div></div>
+  </div>
+</div></main>
+
+<div class="modal hidden" id="confirm"><div class="box"><h2>End paper?</h2><p id="cmsg"></p>
+  <div class="row"><button class="btn ghost" id="cno">Back to test</button><button class="btn red" id="cyes">Yes, end paper</button></div></div></div>
+
+<div class="modal hidden" id="warn"><div class="box"><h2>Warning</h2><p id="wmsg"></p>
+  <div class="row"><button class="btn" id="wok">Continue Test</button></div></div></div>
+
+<div class="modal hidden" id="done"><div class="box"><h2>Test Completed</h2>
+  <p id="dmsg">Your test is complete.</p>
+  <button class="btn grn big hidden" style="margin-top:0" id="vr">View Result</button>
+  <button class="btn ghost big hidden" style="margin-top:12px" id="dout">Close</button></div></div>
+
+<div id="report" class="hidden">
+  <div class="tools"><button class="btn" id="prt">Print / Save as PDF</button><button class="btn" id="jpg">Download JPG</button><button class="btn grn" id="dout2">Finish</button></div>
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<footer>Developed by <b>IT Instructor Hidayat Khan</b></footer>
+
+<div id="cur"><svg viewBox="0 0 30 30" width="30" height="30"><defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff3d71"/><stop offset=".5" stop-color="#ffb300"/><stop offset="1" stop-color="#3d7bff"/></linearGradient></defs><path d="M3 2 L3 24 L9 18.5 L13.5 28 L18 26 L13.6 16.8 L22 16.5 Z" fill="url(#cg)" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+<script src="config.js"></script>
+<script src="fx.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

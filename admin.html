@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src https://*.workers.dev; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin</title>
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+</head>
+<body>
+<header><h1>Admin Panel</h1><p>Entry Test Management</p></header>
+<main id="app"><div class="wrap">
+  <div class="card login-box" id="lbox">
+    <h2 class="ttl" style="font-size:26px">Admin Login</h2>
+    <label for="ap" style="font-size:16px">Password</label>
+    <input type="password" id="ap" autocomplete="current-password" placeholder="Admin password">
+    <div class="err" id="aerr"></div>
+    <button class="btn big" id="alogin" style="margin-top:10px">Login</button>
+  </div>
+</div></main>
+<div id="report" class="hidden">
+  <div class="tools"><button class="btn" id="prt">Print / Save as PDF</button><button class="btn ghost" id="rclose">Close</button></div>
+  <div class="sheet" id="sheet"></div>
+</div>
+<div id="cur"><svg viewBox="0 0 30 30" width="30" height="30"><defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff3d71"/><stop offset=".5" stop-color="#ffb300"/><stop offset="1" stop-color="#3d7bff"/></linearGradient></defs><path d="M3 2 L3 24 L9 18.5 L13.5 28 L18 26 L13.6 16.8 L22 16.5 Z" fill="url(#cg)" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+<script src="config.js"></script>
+<script src="fx.js"></script>
+<script src="admin-login.js"></script>
+</body>
+</html>
